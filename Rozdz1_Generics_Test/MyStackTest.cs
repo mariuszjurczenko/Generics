@@ -10,7 +10,7 @@ namespace Rozdz1_Generics_Test
         public void New_Stack_IsEmpty()
         {
             // Arrange
-            var stack = new MyStack();
+            var stack = new MyStack<double>();
 
             // Act
 
@@ -22,7 +22,7 @@ namespace Rozdz1_Generics_Test
         public void Four_Element_Stack_Is_Full_After_Add_Four_Element()
         {
             // Arrange
-            var stack = new MyStack(capacity: 4);
+            var stack = new MyStack<double>(capacity: 4);
 
             // Act
             stack.WriteElement(5);
@@ -38,11 +38,11 @@ namespace Rozdz1_Generics_Test
         public void Last_In_First_Out()
         {
             // Arrange
-            var stack = new MyStack(capacity: 4);
-            var value1 = 3.3;
-            var value2 = 6.5;
-            var value3 = 9.4;
-            var value4 = 6.6;
+            var stack = new MyStack<string>(capacity: 4);
+            var value1 = "3.3";
+            var value2 = "6.5";
+            var value3 = "9.4";
+            var value4 = "6.6";
 
             // Act
             stack.WriteElement(value1);
@@ -62,7 +62,7 @@ namespace Rozdz1_Generics_Test
         public void The_Output_Element_Is_Top_Of_The_Stack()  
         {
             // Arrange
-            var stack = new MyStack(capacity: 10);
+            var stack = new MyStack<double>(capacity: 10);
 
             // Act
             stack.WriteElement(1);

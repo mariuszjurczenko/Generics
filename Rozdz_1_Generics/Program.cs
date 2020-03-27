@@ -6,7 +6,7 @@ namespace Rozdz_1_Generics
     {
         static void Main(string[] args)
         {
-            var stack = new MyStack();
+            var stack = new MyStack<double>();
 
             while (true)
             {
@@ -32,7 +32,7 @@ namespace Rozdz_1_Generics
             return choice;
         }
 
-        private static void WorkWithAChoice(MyStack stack, int choice)
+        private static void WorkWithAChoice(MyStack<double> stack, int choice)
         {
             switch (choice)
             {
