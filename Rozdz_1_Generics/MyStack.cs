@@ -4,7 +4,7 @@ namespace Rozdz_1_Generics
 {
     public class MyStack
     {
-        private double[] elementsStack;
+        private object[] elementsStack;
         private int topOfTheStack;
 
         public MyStack() : this(capacity: 5)
@@ -13,7 +13,7 @@ namespace Rozdz_1_Generics
 
         public MyStack(int capacity)
         {
-            elementsStack = new double[capacity];
+            elementsStack = new object[capacity];
             topOfTheStack = -1;
         }
 
@@ -32,7 +32,7 @@ namespace Rozdz_1_Generics
             get { return topOfTheStack == (Capacity - 1); }
         }
 
-        public void WriteElement(double element)
+        public void WriteElement(object element)
         {
             if (IsFull)
             {
@@ -46,7 +46,7 @@ namespace Rozdz_1_Generics
             }
         }
 
-        public double ReadElement()
+        public object ReadElement()
         {
             if (IsEmpty)
             {
@@ -57,7 +57,7 @@ namespace Rozdz_1_Generics
                 return elementsStack[topOfTheStack--];
         }
 
-        public double CheckElement()
+        public object CheckElement()
         {
             if (IsEmpty)
             {
@@ -75,6 +75,22 @@ namespace Rozdz_1_Generics
 
             for (int i = topOfTheStack; i > -1; i--)
                 Console.WriteLine("Element {0} : {1}", (i + 1), elementsStack[i]);
+        }
+
+        public object SumOfElements()
+        {
+            var sum = 0.0;
+
+            for (int i = topOfTheStack; i > -1; i--)
+            {
+                var value = elementsStack[i];
+                if (value is double)
+                {
+                    sum += (double)elementsStack[i];
+                }
+            }             
+
+            return sum;
         }
     }
 }

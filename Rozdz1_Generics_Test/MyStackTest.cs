@@ -39,10 +39,10 @@ namespace Rozdz1_Generics_Test
         {
             // Arrange
             var stack = new MyStack(capacity: 4);
-            var value1 = 3.3;
-            var value2 = 6.5;
-            var value3 = 9.4;
-            var value4 = 6.6;
+            var value1 = "3.3";
+            var value2 = "6.5";
+            var value3 = "9.4";
+            var value4 = "6.6";
 
             // Act
             stack.WriteElement(value1);
