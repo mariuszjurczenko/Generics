@@ -7,7 +7,6 @@ namespace Rozdz_1_Generics
         static void Main(string[] args)
         {
             var stack = new MyStack();
-            stack.WriteElement("Marcin");
 
             while (true)
             {
@@ -26,8 +25,7 @@ namespace Rozdz_1_Generics
             Console.WriteLine("2. Read element");
             Console.WriteLine("3. Check element");
             Console.WriteLine("4. Display all");
-            Console.WriteLine("5. Sum of element");
-            Console.WriteLine("6. End of program");
+            Console.WriteLine("5. End of program");
             Console.WriteLine();
             Console.Write("Chose what you want to do: ");
             int.TryParse(Console.ReadLine(), out int choice);
@@ -53,9 +51,6 @@ namespace Rozdz_1_Generics
                     stack.DisplayAll();
                     break;
                 case 5:
-                    Console.WriteLine("The sum of element is : {0}", stack.SumOfElements());
-                    break;
-                case 6:
                     Environment.Exit(1);
                     break;
                 default:
