@@ -6,12 +6,12 @@ namespace Rozdz_1_Generics
     {
         static void Main(string[] args)
         {
-            var stack = new MyStack<double>();
+            var collection = new MyQueue<double>();
 
             while (true)
             {
                 int choice = DisplayMenu();
-                WorkWithAChoice(stack, choice);
+                WorkWithAChoice(collection, choice);
                 BackToMenu();
             }
         }
@@ -32,23 +32,23 @@ namespace Rozdz_1_Generics
             return choice;
         }
 
-        private static void WorkWithAChoice(IMyCollection<double> stack, int choice)
+        private static void WorkWithAChoice(IMyCollection<double> collection, int choice)
         {
             switch (choice)
             {
                 case 1:
                     Console.Write("Write element : ");
                     if (double.TryParse(Console.ReadLine(), out double value))
-                        stack.WriteElement(value);
+                        collection.WriteElement(value);
                     break;
                 case 2:
-                    Console.WriteLine("This element readed : {0}", stack.ReadElement());
+                    Console.WriteLine("This element readed : {0}", collection.ReadElement());
                     break;
                 case 3:
-                    Console.WriteLine("The output element is : {0}", stack.CheckElement());
+                    Console.WriteLine("The output element is : {0}", collection.CheckElement());
                     break;
                 case 4:
-                    stack.DisplayAll();
+                    collection.DisplayAll();
                     break;
                 case 5:
                     Environment.Exit(1);
