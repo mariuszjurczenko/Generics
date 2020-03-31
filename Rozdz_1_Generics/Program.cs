@@ -32,7 +32,7 @@ namespace Rozdz_1_Generics
             return choice;
         }
 
-        private static void WorkWithAChoice(MyStack<double> stack, int choice)
+        private static void WorkWithAChoice(IMyCollection<double> stack, int choice)
         {
             switch (choice)
             {

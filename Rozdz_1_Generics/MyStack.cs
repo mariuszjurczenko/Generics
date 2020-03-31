@@ -2,7 +2,8 @@
 
 namespace Rozdz_1_Generics
 {
-    public class MyStack<T>
+
+    public class MyStack<T> : IMyCollection<T>
     {
         private T[] elementsStack;
         private int topOfTheStack;
