@@ -6,7 +6,7 @@ namespace Rozdz_1_Generics
     {
         static void Main(string[] args)
         {
-            var collection = new MyQueue<double>();
+            var collection = new MyStack<double>();
 
             while (true)
             {

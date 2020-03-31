@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Rozdz_1_Generics
 {
@@ -31,12 +32,12 @@ namespace Rozdz_1_Generics
         public void DisplayAll()
         {
             if (IsEmpty)
-                System.Console.WriteLine("No elements to display");
+                Console.WriteLine("No elements to display");
 
             var i = 0;
             foreach (var item in queue)
             {
-                System.Console.WriteLine("Element{0} : {1}", (++i), item);
+                Console.WriteLine("Element{0} : {1}", (++i), item);
             }
         }
     }

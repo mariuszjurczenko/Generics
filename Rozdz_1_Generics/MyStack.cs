@@ -1,81 +1,46 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Rozdz_1_Generics
 {
 
     public class MyStack<T> : IMyCollection<T>
     {
-        private T[] elementsStack;
-        private int topOfTheStack;
+        private Stack<T> stack;
+        private int _capaciy;
 
-        public MyStack() : this(capacity: 5)
+        public MyStack(int capacity = 5)
         {
+            _capaciy = capacity;
+            stack = new Stack<T>(capacity);
         }
 
-        public MyStack(int capacity)
-        {
-            elementsStack = new T[capacity];
-            topOfTheStack = -1;
-        }
+        public bool IsEmpty => stack.Count == 0;
 
-        public int Capacity
-        {
-            get { return elementsStack.Length; }
-        }
-
-        public bool IsEmpty
-        {
-            get { return topOfTheStack == -1; }
-        }
-
-        public bool IsFull
-        {
-            get { return topOfTheStack == (Capacity - 1); }
-        }
-
+        public bool IsFull => stack.Count == _capaciy;
+          
         public void WriteElement(T element)
         {
-            if (IsFull)
-            {
-                Console.WriteLine("Stack is full !");
-                Console.WriteLine("Element not added !");
-            }
-            else
-            {
-                elementsStack[++topOfTheStack] = element;
-                Console.WriteLine("Element has been successfully added !");
-            }
+            stack.Push(element);
         }
-
         public T ReadElement()
         {
-            if (IsEmpty)
-            {
-                Console.WriteLine("Stack is empty !");
-                return default;
-            }
-            else
-                return elementsStack[topOfTheStack--];
+            return stack.Pop();
         }
-
         public T CheckElement()
         {
-            if (IsEmpty)
-            {
-                Console.WriteLine("Stack is empty !");
-                return default;
-            }
-            else
-                return elementsStack[topOfTheStack];
+            return stack.Peek();
         }
-
         public void DisplayAll()
         {
             if (IsEmpty)
                 Console.WriteLine("No elements to display");
 
-            for (int i = topOfTheStack; i > -1; i--)
-                Console.WriteLine("Element {0} : {1}", (i + 1), elementsStack[i]);
+            var i = 0;
+            foreach (var item in stack)
+            {
+                Console.WriteLine("Element{0} : {1}", (++i), item);
+            }
         }
     }
 }
