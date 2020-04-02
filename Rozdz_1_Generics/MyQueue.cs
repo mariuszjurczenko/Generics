@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace Rozdz_1_Generics
@@ -39,6 +40,20 @@ namespace Rozdz_1_Generics
             {
                 Console.WriteLine("Element{0} : {1}", (++i), item);
             }
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            foreach (var item in queue)
+            {
+                // ...
+                yield return item;
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }

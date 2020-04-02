@@ -1,6 +1,8 @@
-﻿namespace Rozdz_1_Generics
+﻿using System.Collections.Generic;
+
+namespace Rozdz_1_Generics
 {
-    public interface IMyCollection<T>
+    public interface IMyCollection<T> : IEnumerable<T>
     {
         bool IsEmpty { get; }
         bool IsFull { get; }         
