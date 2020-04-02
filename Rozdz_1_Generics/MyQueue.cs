@@ -14,9 +14,9 @@ namespace Rozdz_1_Generics
 
         public bool IsEmpty => queue.Count == 0;
 
-        public bool IsFull => false;
+        public virtual bool IsFull => false;
 
-        public void WriteElement(T element)
+        public virtual void WriteElement(T element)
         {
             queue.Enqueue(element);
         }
