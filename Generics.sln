@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rozdz_1_Generics", "Rozdz_1
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rozdz1_Generics_Test", "Rozdz1_Generics_Test\Rozdz1_Generics_Test.csproj", "{2193870A-EFBD-49AD-A42B-9C024547B131}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rozdz_2", "Rozdz_2\Rozdz_2.csproj", "{349B9093-F3E6-415A-B1AB-D628C8BD0AE8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rozdz_2", "Rozdz_2\Rozdz_2.csproj", "{349B9093-F3E6-415A-B1AB-D628C8BD0AE8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rozdz_3", "Rozdz_3\Rozdz_3.csproj", "{92ABFFCF-78CE-4C43-9047-BE93C1E0DDC4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{349B9093-F3E6-415A-B1AB-D628C8BD0AE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{349B9093-F3E6-415A-B1AB-D628C8BD0AE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{349B9093-F3E6-415A-B1AB-D628C8BD0AE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92ABFFCF-78CE-4C43-9047-BE93C1E0DDC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92ABFFCF-78CE-4C43-9047-BE93C1E0DDC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92ABFFCF-78CE-4C43-9047-BE93C1E0DDC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92ABFFCF-78CE-4C43-9047-BE93C1E0DDC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
