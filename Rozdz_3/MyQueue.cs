@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace Rozdz_3
 {
@@ -39,6 +40,17 @@ namespace Rozdz_3
             foreach (var item in queue)
             {
                 Console.WriteLine("Element{0} : {1}", (++i), item);
+            }
+        }
+
+        public IEnumerable<TOutput> AsEnumerableOf<TOutput>()
+        {
+            var converter = TypeDescriptor.GetConverter(typeof(T));
+
+            foreach (var item in queue)
+            {
+                var result = converter.ConvertTo(item, typeof(TOutput));
+                yield return (TOutput)result;
             }
         }
 

@@ -10,5 +10,6 @@ namespace Rozdz_3
         T ReadElement();
         T CheckElement();
         void DisplayAll();
+        IEnumerable<TOutput> AsEnumerableOf<TOutput>();  
     }
 }

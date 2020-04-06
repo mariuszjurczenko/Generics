@@ -52,7 +52,8 @@ namespace Rozdz_3
                     collection.DisplayAll();
                     break;
                 case 5:
-                    foreach (var item in collection)
+                    var asInt = collection.AsEnumerableOf<int>();
+                    foreach (var item in asInt)
                     {
                         Console.WriteLine(item);
                     }
