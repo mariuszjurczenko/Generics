@@ -9,6 +9,5 @@ namespace Rozdz_3
         void WriteElement(T element);
         T ReadElement();
         T CheckElement();
-        void DisplayAll();
     }
 }

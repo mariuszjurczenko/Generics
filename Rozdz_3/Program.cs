@@ -25,9 +25,8 @@ namespace Rozdz_3
             Console.WriteLine("2. Read element");
             Console.WriteLine("3. Check element");
             Console.WriteLine("4. Display all");
-            Console.WriteLine("5. Display foreach");
-            Console.WriteLine("6. Display exMet");
-            Console.WriteLine("7. End of program");
+            Console.WriteLine("5. Display all Int");
+            Console.WriteLine("6. End of program");
             Console.WriteLine();
             Console.Write("Chose what you want to do: ");
             int.TryParse(Console.ReadLine(), out int choice);
@@ -50,7 +49,7 @@ namespace Rozdz_3
                     Console.WriteLine("The output element is : {0}", collection.CheckElement());
                     break;
                 case 4:
-                    collection.DisplayAll();
+                    collection.WriteCollection();
                     break;
                 case 5:
                     var asInt = collection.AsEnumerableOf<double, int>();
@@ -60,9 +59,6 @@ namespace Rozdz_3
                     }
                     break;
                 case 6:
-                    collection.WriteCollection();
-                    break;
-                case 7:
                     Environment.Exit(1);
                     break;
                 default:

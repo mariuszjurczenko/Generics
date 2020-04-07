@@ -28,19 +28,7 @@ namespace Rozdz_3
         public T CheckElement()
         {
             return queue.Peek();
-        }
-
-        public void DisplayAll()
-        {
-            if (IsEmpty)
-                Console.WriteLine("No elements to display");
-
-            var i = 0;
-            foreach (var item in queue)
-            {
-                Console.WriteLine("Element{0} : {1}", (++i), item);
-            }
-        }   
+        }  
 
         public IEnumerator<T> GetEnumerator()
         {

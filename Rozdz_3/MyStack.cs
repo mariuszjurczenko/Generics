@@ -31,17 +31,6 @@ namespace Rozdz_3
         {
             return stack.Peek();
         }
-        public void DisplayAll()
-        {
-            if (IsEmpty)
-                Console.WriteLine("No elements to display");
-
-            var i = 0;
-            foreach (var item in stack)
-            {
-                Console.WriteLine("Element{0} : {1}", (++i), item);
-            }
-        }
 
         public IEnumerator<T> GetEnumerator()
         {

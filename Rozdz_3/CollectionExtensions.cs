@@ -19,9 +19,13 @@ namespace Rozdz_3
 
         public static void WriteCollection<T>(this IMyCollection<T> collection)
         {
+            if (collection.IsEmpty)
+                Console.WriteLine("No elements to display");
+
+            var i = 0;
             foreach (var item in collection)
             {
-                Console.WriteLine(item);
+                Console.WriteLine("Element{0} : {1}", (++i), item);
             }
         }
     }
