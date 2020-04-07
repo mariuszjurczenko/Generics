@@ -6,13 +6,14 @@ namespace Rozdz_3
     {
         static void Main(string[] args)
         {
-            Action<double> print = d => Console.WriteLine(d);
+            Action<bool> print = d => Console.WriteLine(d);
 
             Func<double, double> operationOn1number = d => d * d;
             Func<double, double, double> operationOn2numbers = (x, y) => x + y;
             Func<int, int, int, double> operationOn3numbers = (x, y, z) => x + y * z;
+            Predicate<double> isLessThanMillion = d => d < 1000000; 
 
-            print(operationOn1number(operationOn2numbers(5, operationOn3numbers(1, 2, 3))));
+            print(isLessThanMillion(operationOn1number(operationOn2numbers(5, operationOn3numbers(1, 2, 3)))));
 
             //var collection = new MyQueue<double>();
 
