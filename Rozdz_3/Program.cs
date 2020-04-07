@@ -6,14 +6,22 @@ namespace Rozdz_3
     {
         static void Main(string[] args)
         {
-            var collection = new MyQueue<double>();
+            Action<double> print = d => Console.WriteLine(d);
 
-            while (true)
-            {
-                int choice = DisplayMenu();
-                WorkWithAChoice(collection, choice);
-                BackToMenu();
-            }
+            Func<double, double> operationOn1number = d => d * d;
+            Func<double, double, double> operationOn2numbers = (x, y) => x + y;
+            Func<int, int, int, double> operationOn3numbers = (x, y, z) => x + y * z;
+
+            print(operationOn1number(operationOn2numbers(5, operationOn3numbers(1, 2, 3))));
+
+            //var collection = new MyQueue<double>();
+
+            //while (true)
+            //{
+            //    int choice = DisplayMenu();
+            //    WorkWithAChoice(collection, choice);
+            //    BackToMenu();
+            //}
         }
 
         private static int DisplayMenu()
