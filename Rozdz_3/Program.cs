@@ -26,7 +26,8 @@ namespace Rozdz_3
             Console.WriteLine("3. Check element");
             Console.WriteLine("4. Display all");
             Console.WriteLine("5. Display foreach");
-            Console.WriteLine("6. End of program");
+            Console.WriteLine("6. Display exMet");
+            Console.WriteLine("7. End of program");
             Console.WriteLine();
             Console.Write("Chose what you want to do: ");
             int.TryParse(Console.ReadLine(), out int choice);
@@ -52,13 +53,16 @@ namespace Rozdz_3
                     collection.DisplayAll();
                     break;
                 case 5:
-                    var asInt = collection.AsEnumerableOf<int>();
+                    var asInt = collection.AsEnumerableOf<double, int>();
                     foreach (var item in asInt)
                     {
                         Console.WriteLine(item);
                     }
                     break;
                 case 6:
+                    collection.WriteCollection();
+                    break;
+                case 7:
                     Environment.Exit(1);
                     break;
                 default:
