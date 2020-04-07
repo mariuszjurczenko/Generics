@@ -4,11 +4,6 @@ namespace Rozdz_3
 {
     class Program
     {
-        static void ConsoleWrite(double data)
-        {
-            Console.WriteLine(data);
-        }
-
         static void Main(string[] args)
         {
             var collection = new MyQueue<double>();
@@ -54,8 +49,7 @@ namespace Rozdz_3
                     Console.WriteLine("The output element is : {0}", collection.CheckElement());
                     break;
                 case 4:
-                    var printer = new Printer<double>(ConsoleWrite);
-                    collection.WriteCollection(printer);
+                    collection.WriteCollection(d => Console.WriteLine(d));
                     break;
                 case 5:
                     var asInt = collection.AsEnumerableOf<double, int>();

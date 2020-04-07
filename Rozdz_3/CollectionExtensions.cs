@@ -4,8 +4,6 @@ using System.ComponentModel;
 
 namespace Rozdz_3
 {
-    public delegate void Printer<T>(T data);
-
     public static class CollectionExtensions
     {
         public static IEnumerable<TOutput> AsEnumerableOf<T, TOutput>(this IMyCollection<T> collection)
@@ -19,7 +17,7 @@ namespace Rozdz_3
             }
         }
 
-        public static void WriteCollection<T>(this IMyCollection<T> collection, Printer<T> print)
+        public static void WriteCollection<T>(this IMyCollection<T> collection, Action<T> print) 
         {
             if (collection.IsEmpty)
                 Console.WriteLine("No elements to display");
