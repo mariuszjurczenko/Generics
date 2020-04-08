@@ -6,7 +6,8 @@ namespace Rozdz_3
     {
         static void Main(string[] args)
         {
-            var collection = new MyQueue<double>();
+            var collection = new MyOverwriteQueue<double>(capacity:3);
+            collection.ItemDeleted += ItemDeleted;
 
             while (true)
             {
@@ -14,6 +15,11 @@ namespace Rozdz_3
                 WorkWithAChoice(collection, choice);
                 BackToMenu();
             }
+        }
+
+        private static void ItemDeleted(object sender, ItemDeletedEventArgs<double> e)
+        {
+            Console.WriteLine("Queue is full. Item Deleted: {0} Item New : {1}", e.ItemDeleted, e.ItemNew);
         }
 
         private static int DisplayMenu()

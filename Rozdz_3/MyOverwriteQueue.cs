@@ -1,4 +1,6 @@
-﻿namespace Rozdz_3
+﻿using System;
+
+namespace Rozdz_3
 {
     public class MyOverwriteQueue<T> : MyQueue<T>
     {
@@ -14,10 +16,22 @@
 
             if (queue.Count > _capacity)
             {
-                queue.Dequeue();
+                var deleted = queue.Dequeue();
+                OnItemDeleted(deleted, element);
+            }
+        }
+
+        private void OnItemDeleted(T deleted, T element)
+        {
+            if (ItemDeleted != null)
+            {
+                var args = new ItemDeletedEventArgs<T>(deleted, element);
+                ItemDeleted(this, args);
             }
         }
 
         public override bool IsFull => queue.Count == _capacity;
+
+        public event EventHandler<ItemDeletedEventArgs<T>> ItemDeleted;
     }
 }
