@@ -1,20 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
+using System.Linq;
 
 namespace Rozdz_3
 {
     public static class CollectionExtensions
     {
-        public static IEnumerable<TOutput> AsEnumerableOf<T, TOutput>(this IMyCollection<T> collection)
+        public static IEnumerable<TOutput> Map<T, TOutput>(this IMyCollection<T> collection, Converter<T, TOutput> converter) 
         {
-            var converter = TypeDescriptor.GetConverter(typeof(T));
-
-            foreach (var item in collection)
-            {
-                TOutput result = (TOutput)converter.ConvertTo(item, typeof(TOutput));
-                yield return result;
-            }
+            return collection.Select(e => converter(e));
         }
 
         public static void WriteCollection<T>(this IMyCollection<T> collection, Action<T> print) 

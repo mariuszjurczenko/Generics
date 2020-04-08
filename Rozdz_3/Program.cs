@@ -6,23 +6,14 @@ namespace Rozdz_3
     {
         static void Main(string[] args)
         {
-            Action<bool> print = d => Console.WriteLine(d);
+            var collection = new MyQueue<double>();
 
-            Func<double, double> operationOn1number = d => d * d;
-            Func<double, double, double> operationOn2numbers = (x, y) => x + y;
-            Func<int, int, int, double> operationOn3numbers = (x, y, z) => x + y * z;
-            Predicate<double> isLessThanMillion = d => d < 1000000; 
-
-            print(isLessThanMillion(operationOn1number(operationOn2numbers(5, operationOn3numbers(1, 2, 3)))));
-
-            //var collection = new MyQueue<double>();
-
-            //while (true)
-            //{
-            //    int choice = DisplayMenu();
-            //    WorkWithAChoice(collection, choice);
-            //    BackToMenu();
-            //}
+            while (true)
+            {
+                int choice = DisplayMenu();
+                WorkWithAChoice(collection, choice);
+                BackToMenu();
+            }
         }
 
         private static int DisplayMenu()
@@ -34,7 +25,7 @@ namespace Rozdz_3
             Console.WriteLine("2. Read element");
             Console.WriteLine("3. Check element");
             Console.WriteLine("4. Display all");
-            Console.WriteLine("5. Display all Int");
+            Console.WriteLine("5. Display all asDate");
             Console.WriteLine("6. End of program");
             Console.WriteLine();
             Console.Write("Chose what you want to do: ");
@@ -61,8 +52,8 @@ namespace Rozdz_3
                     collection.WriteCollection(d => Console.WriteLine(d));
                     break;
                 case 5:
-                    var asInt = collection.AsEnumerableOf<double, int>();
-                    foreach (var item in asInt)
+                    var asDate = collection.Map(d => new DateTime(2020, 1, 1).AddDays(d));
+                    foreach (var item in asDate)
                     {
                         Console.WriteLine(item);
                     }
