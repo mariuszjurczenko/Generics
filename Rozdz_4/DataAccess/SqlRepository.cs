@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Rozdz_4.Model;
+using System;
 using System.Data.Entity;
 using System.Linq;
 
 namespace Rozdz_4.DataAccess
 {
-    public class SqlRepository<T> : IRepository<T> where T: class
+    public class SqlRepository<T> : IRepository<T> where T: class, IEntity
     {
         DbContext _dbContext;
         DbSet<T> _dbSet;
@@ -16,6 +17,7 @@ namespace Rozdz_4.DataAccess
 
         public void Add(T newEntity)
         {
+            if(newEntity.IsValid())
             _dbSet.Add(newEntity);
         }
 
