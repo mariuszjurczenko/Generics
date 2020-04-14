@@ -19,9 +19,14 @@ namespace Rozdz_4.DataAccess
             _dbSet.Add(newEntity);
         }
 
-        public int Commit()
+        public IQueryable<T> FindAll()
         {
-            return _dbContext.SaveChanges();
+            return _dbSet;
+        }
+
+        public T FindById(int id)
+        {
+            throw new NotImplementedException();
         }
 
         public void Delete(T entity)
@@ -29,19 +34,14 @@ namespace Rozdz_4.DataAccess
             throw new NotImplementedException();
         }
 
+        public int Commit()
+        {
+            return _dbContext.SaveChanges();
+        }
+
         public void Dispose()
         {
             _dbContext.Dispose();
-        }
-
-        public IQueryable<T> FindAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public T FindById(int id)
-        {
-            throw new NotImplementedException();
         }
     }
 }
