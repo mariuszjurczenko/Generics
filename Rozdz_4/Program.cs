@@ -17,6 +17,17 @@ namespace Rozdz_4
                 AddCars(carRepository);
                 CountCars(carRepository);
                 QueryCars(carRepository);
+                PrintAllCars(carRepository);
+            }
+        }
+
+        private static void PrintAllCars(IReadOnlyRepository<Vehicle> carRepository)
+        {
+            var cars = carRepository.FindAll();
+
+            foreach (var car in cars)
+            {
+                Console.WriteLine(car.Name);
             }
         }
 

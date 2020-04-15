@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Linq;
 
 namespace Rozdz_4.DataAccess
 {
-    public interface IRepository<T> : IDisposable 
+    public interface IRepository<T> : IReadOnlyRepository<T>, IDisposable 
     {
         void Add(T newEntity);
-        void Delete(T entity);
-        T FindById(int id);
-        IQueryable<T> FindAll();
+        void Delete(T entity);     
         int Commit();
     }
 }
