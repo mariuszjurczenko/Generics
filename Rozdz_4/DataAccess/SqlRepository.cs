@@ -1,5 +1,4 @@
 ﻿using Rozdz_4.Model;
-using System;
 using System.Data.Entity;
 using System.Linq;
 
@@ -28,12 +27,12 @@ namespace Rozdz_4.DataAccess
 
         public T FindById(int id)
         {
-            throw new NotImplementedException();
+            return _dbSet.Find(id);
         }
 
         public void Delete(T entity)
         {
-            throw new NotImplementedException();
+            _dbSet.Remove(entity);
         }
 
         public int Commit()

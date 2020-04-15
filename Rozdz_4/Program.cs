@@ -16,7 +16,14 @@ namespace Rozdz_4
             {
                 AddCars(carRepository);
                 CountCars(carRepository);
+                QueryCars(carRepository);
             }
+        }
+
+        private static void QueryCars(IRepository<Car> carRepository)
+        {
+            var car = carRepository.FindById(1);
+            Console.WriteLine(car.Name);
         }
 
         private static void CountCars(IRepository<Car> carRepository)
