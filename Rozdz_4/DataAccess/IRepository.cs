@@ -2,10 +2,8 @@
 
 namespace Rozdz_4.DataAccess
 {
-    public interface IRepository<T> : IReadOnlyRepository<T>, IDisposable 
+    public interface IRepository<T> : IReadOnlyRepository<T>, IWriteOnlyRepository<T> 
     {
-        void Add(T newEntity);
-        void Delete(T entity);     
-        int Commit();
+       
     }
 }

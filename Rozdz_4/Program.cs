@@ -15,10 +15,17 @@ namespace Rozdz_4
             using (IRepository<Car> carRepository = new SqlRepository<Car>(new CarDb()))
             {
                 AddCars(carRepository);
+                AddSedans(carRepository);
                 CountCars(carRepository);
                 QueryCars(carRepository);
                 PrintAllCars(carRepository);
             }
+        }
+
+        private static void AddSedans(IWriteOnlyRepository<Sedan> carRepository)
+        {
+            carRepository.Add(new Sedan { Name = "Volvo" });
+            carRepository.Commit();
         }
 
         private static void PrintAllCars(IReadOnlyRepository<Vehicle> carRepository)
