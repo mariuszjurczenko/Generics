@@ -15,6 +15,12 @@ namespace Rozdz_5
             {
                 Console.WriteLine("[{0}]", arg.Name);
             }
+
+            var car = new Car();
+            var carType = typeof(Car);
+            var methodInfo = carType.GetMethod("Write");
+            methodInfo = methodInfo.MakeGenericMethod(typeof(string));
+            methodInfo.Invoke(car, null);
         }
 
         private static object CreateCollection(Type collectionType,Type itemType) 
