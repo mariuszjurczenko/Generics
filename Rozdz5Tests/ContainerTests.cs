@@ -18,5 +18,18 @@ namespace Rozdz5Tests
 
             Assert.AreEqual(typeof(SqlServerLogger), logger.GetType());
         }
+
+        [TestMethod]
+        public void Can_Resolve_Types_Without_DefaultConstructor()
+        {
+            var container = new Container();
+
+            container.For<ILogger>().Use<SqlServerLogger>();
+            container.For<IRepository<Car>>().Use<SqlRepository<Car>>();
+
+            var repository = container.Resolve<IRepository<Car>>();
+
+            Assert.AreEqual(typeof(SqlRepository<Car>), repository.GetType());
+        }
     }
 }

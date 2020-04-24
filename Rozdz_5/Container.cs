@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace Rozdz_5
 {
@@ -28,12 +29,24 @@ namespace Rozdz_5
             if (_map.ContainsKey(sourceType))
             {
                 var destinationType = _map[sourceType];
-                return Activator.CreateInstance(destinationType);
+                return CreateInstance(destinationType);
             }
             else
             {
                 throw new InvalidOperationException("Could not resolve " + sourceType.FullName);
             }
+        }
+
+        private object CreateInstance(Type destinationType)
+        {
+            var paramters = destinationType.GetConstructors()
+                                .OrderByDescending(c => c.GetParameters().Count())
+                                .First()
+                                .GetParameters()
+                                .Select(p => Resolve(p.ParameterType))
+                                .ToArray();
+
+            return Activator.CreateInstance(destinationType, paramters);
         }
 
         public class ContainerBuilder
