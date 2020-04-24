@@ -31,5 +31,19 @@ namespace Rozdz5Tests
 
             Assert.AreEqual(typeof(SqlRepository<Car>), repository.GetType());
         }
+
+        [TestMethod]
+        public void Can_Resolve_Concrete_Type() 
+        {
+            var container = new Container();
+
+            container.For<ILogger>().Use<SqlServerLogger>();
+            container.For<IRepository<Car>>().Use<SqlRepository<Car>>();
+            container.For(typeof(IRepository<>)).Use(typeof(SqlRepository<>));
+
+            var service = container.Resolve<OrderingServic>();
+
+            Assert.IsNotNull(service);
+        }
     }
 }
