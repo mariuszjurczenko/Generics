@@ -1,5 +1,6 @@
 # Generics
 C# Seria Programista - część 5 C# Generics
+
 mariuszjurczenko@dev-hobby.pl
 
 W tym kursie pokażę Ci, wszystko, co powinieneś wiedzieć o typach Generycznych w języku C#, 
