@@ -17,4 +17,4 @@ Oznacza to, że przyjrzymy się metodom, delegatom generycznym, a także przyjrz
 metodom rozszerzenia, zdarzeniom i procedurom obsługi zdarzeń, z których wszystkie mogą używać parametrów typu ogólnego, 
 aby można było pisać bloki kodu wielokrotnego użytku . 
 
-Link do kursu https://dev-hobby.pl/kursy/c-generics/mvc/
+Link do kursu https://dev-hobby.pl/kursy/c-generics
